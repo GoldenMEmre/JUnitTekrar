@@ -36,6 +36,7 @@ public class C05_Assertions {
         String actualUrl = driver.getCurrentUrl();
 
         Assert.assertEquals(expectedUrl,actualUrl);
+        driver.close();
     }
 
     @Test
@@ -46,6 +47,7 @@ public class C05_Assertions {
         String actualTitle = driver.getTitle();
 
         Assert.assertFalse(actualTitle.contains(unExpectedIcerik));
+        driver.close();
     }
 
     @Test
@@ -55,6 +57,7 @@ public class C05_Assertions {
         WebElement bestBuyLogoElementi = driver.findElement(By.xpath("(//img[@class='logo'])[1]"));
 
         Assert.assertTrue(bestBuyLogoElementi.isDisplayed());
+        driver.close();
     }
 
     @Test
@@ -64,5 +67,6 @@ public class C05_Assertions {
         WebElement fransizcaLinkElementi = driver.findElement(By.xpath("//button[@lang='fr']"));
 
         Assert.assertTrue(fransizcaLinkElementi.isDisplayed());
+        driver.close();
     }
 }
